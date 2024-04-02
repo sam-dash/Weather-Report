@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather report</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="weather__wrapper">
+
+        <div class="search-form">
+            <input class="search-form__txt" type="text" placeholder="Введите город">
+            <button class="search-form__btn">
+                <img class="search-form__icon" src="/images/search.svg" alt="Иконка поиска">
+            </button>
+        </div>
+
+        <div class="error">
+            <p class="error_404">City not found</p>
+        </div>
+
+        <div class="weather">
+            <h1 class="weather__sity">Murmansk</h1>
+            <img class="weather__image" src="/images/DaySun.svg" alt="Изображение погоды">
+            <h2 class="weather__temp">0 &#8451</p>
+                <h2 class="weather__description">clear</h1>
+        </div>
+
+        <div class="data">
+            <div>
+                <img src="/images/feellike.svg">
+                <p class="data__feels-like">0 &#8451</p>
+                <span>feels like</span>
+            </div>
+
+            <div>
+                <img src="/images/humidity.svg">
+                <p class="data__humidity">0%</p>
+                <span>humidity</span>
+            </div>
+
+            <div>
+                <img src="/images/windspeed.svg">
+                <p class="data__wind-speed">0</p>
+                <span>wind speed</span>
+            </div>
+
+            <div>
+                <img class="data__pressure-svg" src="/images/pressure.svg">
+                <p class="data__pressure">0</p>
+                <span>pressure</span>
+            </div>
+
+            <div>
+                <img src="/images/sunrise.svg">
+                <p class="data__sun-rise">00:00</p>
+                <span>sunrise</span>
+            </div>
+
+            <div>
+                <img src="/images/sunset.svg">
+                <p class="data__sun-set">00:00</p>
+                <span>sun set</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
