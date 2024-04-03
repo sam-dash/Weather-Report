@@ -8,6 +8,9 @@ const searchBtn = document.querySelector('.search-form__btn')
 const weatherDisplay = document.querySelector('.weather')
 const dataDisplay = document.querySelector('.data')
 const error404 = document.querySelector('.error')
+const upDate = document.querySelector(".update img")
+
+let currentCity = ""
 
 //Изменить значение html
 const newValueByClass = (className, newValue) => {
@@ -31,9 +34,9 @@ const checkWeather = async city => {
     const hPaToMmHg = Math.round(data.main.pressure * 0.750062)
 
     newValueByClass('.weather__sity', data.name)
-    newValueByClass('.weather__temp', data.main.temp + ' &#8451')
+    newValueByClass('.weather__temp', Math.round(data.main.temp) + ' &#8451')
     newValueByClass('.weather__description', data.weather[0].description)
-    newValueByClass('.data__feels-like', data.main.feels_like + ' &#8451')
+    newValueByClass('.data__feels-like', Math.round(data.main.feels_like) + ' &#8451')
     newValueByClass('.data__humidity', data.main.humidity + '%')
     newValueByClass('.data__wind-speed', data.wind.speed + ' m/s')
     newValueByClass('.data__pressure', hPaToMmHg + ' mmHg')
@@ -65,6 +68,7 @@ const checkWeather = async city => {
         img.src = '/images/DaySnow.svg'
         break
     }
+    
   } catch (error) {
     error404.style.display = 'block'
     weatherDisplay.style.display = 'none'
@@ -75,14 +79,21 @@ const checkWeather = async city => {
 
 //Применяем функцию при клике
 searchBtn.addEventListener('click', () => {
-  checkWeather(searchTxt.value)
+  currentCity = searchTxt.value
+  checkWeather(currentCity)
   searchTxt.value = ''
 })
 
 // enter = 13, вешаем слушатель на поиск по кнопке
 searchTxt.addEventListener('keydown', event => {
   if (event.keyCode === 13) {
-    checkWeather(searchTxt.value)
+    currentCity = searchTxt.value
+    checkWeather(currentCity)
     searchTxt.value = ''
   }
+})
+
+// Обновить данные
+upDate.addEventListener('click', () => {
+    checkWeather(currentCity);
 })
