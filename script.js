@@ -50,22 +50,22 @@ const checkWeather = async city => {
 
     switch (data.weather[0].main) {
       case 'Clouds':
-        img.src = '/images/DayClouds.svg'
+        img.src = 'images/DayClouds.svg'
         break
       case 'Clear':
-        img.src = '/images/DaySun.svg'
+        img.src = 'images/DaySun.svg'
         break
       case 'Rain':
-        img.src = '/images/DayRain.svg'
+        img.src = 'images/DayRain.svg'
         break
       case 'Wind':
-        img.src = '/images/DayWind.svg'
+        img.src = 'images/DayWind.svg'
         break
       case 'Thunderstorm':
-        img.src = '/images/DayStorm.svg'
+        img.src = 'images/DayStorm.svg'
         break
       case 'Snow':
-        img.src = '/images/DaySnow.svg'
+        img.src = 'images/DaySnow.svg'
         break
     }
     
