@@ -68,7 +68,7 @@ const checkWeather = async city => {
         img.src = 'images/DaySnow.svg'
         break
     }
-    
+
   } catch (error) {
     error404.style.display = 'block'
     weatherDisplay.style.display = 'none'
